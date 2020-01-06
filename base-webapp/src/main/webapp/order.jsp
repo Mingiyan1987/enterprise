@@ -7,7 +7,7 @@
 </head>
 <body>
 <%@include file="/WEB-INF/jspf/menu.jspf" %>
-<h1>Это главная страница сайта</h1>
-<h2>Сегодня <%=new java.util.Date()%></h2>
+<h1>Заказ</h1>
+
 </body>
 </html>

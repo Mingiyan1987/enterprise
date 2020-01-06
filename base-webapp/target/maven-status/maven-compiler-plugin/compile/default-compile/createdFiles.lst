@@ -1,6 +1,8 @@
-ru/basanov/OrderServlet.class
-ru/basanov/CatalogServlet.class
-ru/basanov/CartServlet.class
-ru/basanov/ProductServlet.class
-ru/basanov/MainServlet.class
+ru/basanov/servlet/OrderServlet.class
+ru/basanov/servlet/CatalogServlet.class
+ru/basanov/servlet/ProductServlet.class
+ru/basanov/servlet/CartServlet.class
+ru/basanov/entity/ProductList.class
+ru/basanov/servlet/MainServlet.class
+ru/basanov/contoller/ControllerServlet.class
 ru/basanov/filter/HeaderFooterFilter.class

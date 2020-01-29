@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="base-webapp" />
+        <module name="base-jsf-app" />
         <module name="basewebapp" />
+        <module name="base-webapp" />
       </profile>
     </annotationProcessing>
   </component>

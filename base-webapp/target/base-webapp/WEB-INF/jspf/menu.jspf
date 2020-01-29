@@ -1,7 +1,0 @@
-<%@ page pageEncoding="UTF-8" %>
-<ul style="list-style-type: none">
-    <li style="display: inline-block"><a href="main">Главная</a></li>
-    <li style="display: inline-block"><a href="catalogServlet">Каталог</a></li>
-    <li style="display: inline-block"><a href="orderServlet">Заказ</a></li>
-    <li style="display: inline-block"><a href="cartServlet">Корзина</a></li>
-</ul>

@@ -46,7 +46,7 @@
   </dependencies>
 
   <build>
-    <finalName>base-webapp</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.wildfly.plugins</groupId>

@@ -1,19 +1,20 @@
 package ru.basanov.dao;
 
-import ru.basanov.bean.Product;
+import ru.basanov.entity.Product;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import java.util.HashMap;
 import java.util.Map;
 
-@ApplicationScoped
 @Named
+@ApplicationScoped
 public class ProductDAO {
 
-    private Map<String, Product> productMap = new HashMap<>();
+    private Map<String, Product> productMap;
 
     public ProductDAO() {
+        productMap = new HashMap<>();
     }
 
     public Map<String, Product> findAll() {

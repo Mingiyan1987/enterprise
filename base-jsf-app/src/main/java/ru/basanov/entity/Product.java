@@ -1,14 +1,8 @@
-package ru.basanov.bean;
+package ru.basanov.entity;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
-
-@Named
-@RequestScoped
 public class Product {
     private int price;
     private String name;
-
 
     public Product() {
     }

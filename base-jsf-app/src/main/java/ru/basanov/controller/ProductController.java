@@ -1,6 +1,6 @@
 package ru.basanov.controller;
 
-import ru.basanov.bean.Product;
+import ru.basanov.entity.Product;
 import ru.basanov.dao.ProductDAO;
 
 import javax.enterprise.context.SessionScoped;
@@ -9,9 +9,8 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Map;
 
-
-@Named
 @SessionScoped
+@Named
 public class ProductController implements Serializable {
 
     @Inject
@@ -32,12 +31,12 @@ public class ProductController implements Serializable {
     }
 
     public String createProduct() {
-        this.product = new Product();
+        product = new Product();
         return "/product.xhtml?faces-redirect=true";
     }
 
     public String editProduct(Product product) {
-        this.product = product;
+        productDAO.editProduct(product);
         return "/product.xhtml?faces-redirect=true";
     }
 
@@ -46,7 +45,7 @@ public class ProductController implements Serializable {
         return "/index.xhtml?faces-redirect=true";
     }
 
-    public String saveProduct(Product product) {
+    public String saveProduct() {
         productDAO.saveProduct(product);
         return "/index.xhtml?faces-redirect=true";
     }

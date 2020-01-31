@@ -4,12 +4,20 @@ import ru.basanov.entity.Product;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Named
 @ApplicationScoped
 public class ProductDAO {
+
+    @PersistenceContext(unitName = "ds")
+    private EntityManager entityManager;
 
     private Map<String, Product> productMap;
 
@@ -17,19 +25,22 @@ public class ProductDAO {
         productMap = new HashMap<>();
     }
 
-    public Map<String, Product> findAll() {
-        return productMap;
+    public List<Product> findAll() {
+        return entityManager.createQuery("from Product", Product.class).getResultList();
     }
 
+    @Transactional
     public void saveProduct(Product product) {
-        productMap.put(product.toString(), product);
+        entityManager.persist(product);
     }
 
+    @Transactional
     public Product editProduct(Product product) {
-        return productMap.get(product.toString());
+        return entityManager.merge(product);
     }
 
-    public void deleteProduct(String key) {
-        productMap.remove(key);
+    @Transactional
+    public void deleteProduct(Product product) {
+        entityManager.remove(product);
     }
 }

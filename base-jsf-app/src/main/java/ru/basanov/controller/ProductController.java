@@ -4,10 +4,11 @@ import ru.basanov.entity.Product;
 import ru.basanov.dao.ProductDAO;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.util.Map;
+import java.util.List;
 
 @SessionScoped
 @Named
@@ -18,6 +19,12 @@ public class ProductController implements Serializable {
 
     private Product product;
 
+    private List<Product> productList;
+
+    public void preloadProducts(ComponentSystemEvent componentSystemEvent) {
+        this.productList = productDAO.findAll();
+    }
+
     public Product getProduct() {
         return product;
     }
@@ -26,8 +33,8 @@ public class ProductController implements Serializable {
         this.product = product;
     }
 
-    public Map<String, Product> getAllProducts() {
-        return productDAO.findAll();
+    public List<Product> getAllProducts() {
+        return productList;
     }
 
     public String createProduct() {
@@ -41,7 +48,7 @@ public class ProductController implements Serializable {
     }
 
     public String deleteProduct(Product product) {
-        productDAO.deleteProduct(product.toString());
+        productDAO.deleteProduct(product);
         return "/index.xhtml?faces-redirect=true";
     }
 

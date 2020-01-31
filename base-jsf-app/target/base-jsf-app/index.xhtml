@@ -7,6 +7,8 @@
     <title>Товары</title>
 </head>
 <body>
+    <f:event listener="${productController.preloadProducts}" type="preRenderView"/>
+
     <div class="container">
         <h:form id="productsForm">
             <div>

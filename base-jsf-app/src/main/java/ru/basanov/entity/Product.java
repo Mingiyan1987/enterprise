@@ -1,7 +1,19 @@
 package ru.basanov.entity;
 
+import javax.persistence.*;
+
+@Table(name = "app_product")
+@Entity
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(length = 10000, nullable = false)
     private int price;
+
+    @Column(length = 4096, nullable = false)
     private String name;
 
     public Product() {

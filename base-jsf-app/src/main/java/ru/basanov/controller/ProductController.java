@@ -3,6 +3,7 @@ package ru.basanov.controller;
 import ru.basanov.entity.Product;
 import ru.basanov.dao.ProductDAO;
 
+import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.event.ComponentSystemEvent;
 import javax.inject.Inject;
@@ -10,8 +11,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@SessionScoped
-@Named
+@Stateful
 public class ProductController implements Serializable {
 
     @Inject

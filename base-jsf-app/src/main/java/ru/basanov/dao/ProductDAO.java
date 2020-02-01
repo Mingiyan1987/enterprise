@@ -2,19 +2,16 @@ package ru.basanov.dao;
 
 import ru.basanov.entity.Product;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Named
-@ApplicationScoped
-public class ProductDAO {
+@Stateless
+public class ProductDAO implements ProductService {
 
     @PersistenceContext(unitName = "ds")
     private EntityManager entityManager;
@@ -25,6 +22,7 @@ public class ProductDAO {
         productMap = new HashMap<>();
     }
 
+    @Override
     public List<Product> findAll() {
         return entityManager.createQuery("from Product", Product.class).getResultList();
     }

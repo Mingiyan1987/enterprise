@@ -1,0 +1,12 @@
+# 1. creating the mysql module in JBOSS_HOME/modules/mysql
+# put here correct path to your MySQL connection driver
+module add \
+  --name=org.postgresql.driver \
+  --dependencies=javax.api,javax.transaction.api \
+  --resources=/Users/mingianbasanov/Downloads/postgresql-42.2.9.jar
+
+# 2. creating driver section in standalone.xml config
+/subsystem=datasources/jdbc-driver=postgresql:add( driver-name=postgresql, driver-module-name=org.postgresql.driver, driver-class-name=org.postgresql.Driver )
+
+# 3. restarting Wildfly server
+:reload

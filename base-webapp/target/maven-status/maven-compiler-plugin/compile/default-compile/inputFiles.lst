@@ -1,0 +1,8 @@
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/servlet/MainServlet.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/contoller/ControllerServlet.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/servlet/CatalogServlet.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/servlet/ProductServlet.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/servlet/OrderServlet.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/entity/ProductList.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/filter/HeaderFooterFilter.java
+/Users/mingianbasanov/IdeaProjects/enterprise/base-webapp/src/main/java/ru/basanov/servlet/CartServlet.java
